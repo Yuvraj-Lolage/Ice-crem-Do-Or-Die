@@ -10,7 +10,6 @@
     />
     <style>
       body {
-        position: relative;
         background: linear-gradient(to right, #ff758c, #ff7eb3);
         color: white;
         text-align: center;
@@ -22,19 +21,23 @@
         height: 100vh;
         overflow: hidden;
         padding: 20px;
-      }
-      #message {
-        font-size: 20px;
+        margin: 0;
       }
       .message-box {
-        overflow-y: scroll;
+        overflow-y: auto;
         background: rgba(255, 255, 255, 0.2);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        max-height: 70vh;
+        width: 90%;
+        flex-grow: 1;
+      }
+      #message {
+        font-size: 20px;
       }
       .btn-reveal {
-        position: absolute;
+        position: fixed;
         background-color: #ffa216;
         color: white;
         border: none;
@@ -44,22 +47,21 @@
         cursor: pointer;
         box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.5);
         transition: transform 0.2s ease-in-out;
-        bottom: 40px;
-        left: 20%;
-        right: 20%;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .btn-reveal:hover {
-        transform: scale(1.1);
+        transform: translateX(-50%) scale(1.1);
       }
-
       #title {
         font-size: 30px;
         font-weight: 600;
         text-transform: capitalize;
       }
-      @media screen and (max-width<768px) {
+      @media screen and (max-width: 768px) {
         .message-box {
-          overflow-y: scroll;
+          max-height: 60vh;
         }
       }
     </style>
@@ -70,32 +72,20 @@
       <p class="text-justify" id="message">
         .... . -.-- / -- .- -.. .- -- .--- .. --..-- / .. .----. -- / .-. . .-
         .-.. .-.. -.-- / ... --- .-. .-. -.-- / .- -... --- ..- - / .-.. .- ...
-        - / -. .. --. .... - .-.-.- / .. / .- .-.. .-- .- -.-- ... / .-- .- -. -
+        - / -. .. --. .... - .-.-.- / .. / .- .-.. .-- .- -.-- ... / .-- .- -. - 
         / - --- / ... . . / -.-- --- ..- / .... .- .--. .--. -.-- / -... . -.-.
         .- ..- ... . / -.-- --- ..- / .- .-. . / -- -.-- / .-.. .. ..-. . .-..
-        .. -. . .-.-.- / .. / .- .-.. .-- .- -.-- ... / - --- .-.. -.. / -.--
-        --- ..- / --- ..- .-. / -... --- -. -.. / .. ... / .-.. .. -.- . / ...
-        .- - ..- .-. -. / .- -. -.. / .. - ... / .-. .. -. --. ... / .... ---
-        .-- / -.-. .- -. / ... .- - ..- .-. -. / -... . / -.-. --- -- .--. .-..
-        . - . / .-- .. - .... --- ..- - / .. - ... / .-. .. -. --. ... --..-- /
-        .--- ..- ... - / .-.. .. -.- . / .... --- .-- / -.-. --- ..- .-.. -.. /
-        .. / . ...- . .-. / -... . / -.-. --- -- .--. .-.. . - . / .-- .. - ....
-        --- ..- - / -.-- --- ..- ..--.. / .--. .-.. . .- ... . / ..-. --- .-.
-        --. .. ...- . / -- . .-.-.- / .. / .-.. --- ...- . / -.-- --- ..- .-.-.-
+        .. -. . .-.-.-
       </p>
-
       <div class="text-center">
         <a href="/LoveIsInTheAir.html">
           <button class="btn btn-success">Forgive me plz 🙇🏻</button>
         </a>
       </div>
     </div>
-    <div class="text-center">
-      <button class="btn-reveal" onclick="revealMessage()">
-        My Love Language 💕
-      </button>
-    </div>
-
+    <button class="btn-reveal" onclick="revealMessage()">
+      My Love Language 💕
+    </button>
     <script>
       function revealMessage() {
         document.getElementById("message").innerHTML =
