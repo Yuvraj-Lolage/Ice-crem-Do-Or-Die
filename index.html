@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secret Message</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        position: relative;
+        background: linear-gradient(to right, #ff758c, #ff7eb3);
+        color: white;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        padding: 20px;
+      }
+      #message {
+        font-size: 20px;
+      }
+      .message-box {
+        overflow-y: scroll;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .btn-reveal {
+        position: absolute;
+        background-color: #ffa216;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.5);
+        transition: transform 0.2s ease-in-out;
+        bottom: 40px;
+        left: 20%;
+        right: 20%;
+      }
+      .btn-reveal:hover {
+        transform: scale(1.1);
+      }
+
+      #title {
+        font-size: 30px;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+      @media screen and (max-width<768px) {
+        .message-box {
+          overflow-y: scroll;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message-box">
+      <h1 id="title">Unraveling My Love 💕🔐</h1>
+      <p class="text-justify" id="message">
+        .... . -.-- / -- .- -.. .- -- .--- .. --..-- / .. .----. -- / .-. . .-
+        .-.. .-.. -.-- / ... --- .-. .-. -.-- / .- -... --- ..- - / .-.. .- ...
+        - / -. .. --. .... - .-.-.- / .. / .- .-.. .-- .- -.-- ... / .-- .- -. -
+        / - --- / ... . . / -.-- --- ..- / .... .- .--. .--. -.-- / -... . -.-.
+        .- ..- ... . / -.-- --- ..- / .- .-. . / -- -.-- / .-.. .. ..-. . .-..
+        .. -. . .-.-.- / .. / .- .-.. .-- .- -.-- ... / - --- .-.. -.. / -.--
+        --- ..- / --- ..- .-. / -... --- -. -.. / .. ... / .-.. .. -.- . / ...
+        .- - ..- .-. -. / .- -. -.. / .. - ... / .-. .. -. --. ... / .... ---
+        .-- / -.-. .- -. / ... .- - ..- .-. -. / -... . / -.-. --- -- .--. .-..
+        . - . / .-- .. - .... --- ..- - / .. - ... / .-. .. -. --. ... --..-- /
+        .--- ..- ... - / .-.. .. -.- . / .... --- .-- / -.-. --- ..- .-.. -.. /
+        .. / . ...- . .-. / -... . / -.-. --- -- .--. .-.. . - . / .-- .. - ....
+        --- ..- - / -.-- --- ..- ..--.. / .--. .-.. . .- ... . / ..-. --- .-.
+        --. .. ...- . / -- . .-.-.- / .. / .-.. --- ...- . / -.-- --- ..- .-.-.-
+      </p>
+
+      <div class="text-center">
+        <a href="/LoveIsInTheAir.html">
+          <button class="btn btn-success">Forgive me plz 🙇🏻</button>
+        </a>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn-reveal" onclick="revealMessage()">
+        My Love Language 💕
+      </button>
+    </div>
+
+    <script>
+      function revealMessage() {
+        document.getElementById("message").innerHTML =
+          "Hey Madamji ❤️, I'm really sorry 🙇🏻 about last night. I hate that we fought, and it hurts me to see you upset. " +
+          "You mean so much to me, and I never wanted to trouble you. By mistake, if I did anything, I am very very sorry 🙇🏻. " +
+          "Please know that I cherish you and our bond more than anything. I always want to see you happy because you are my lifeline. " +
+          "I always told you our bond is like Saturn 🪐 and its rings 💓 how can Saturn be complete without its rings? " +
+          "Just like that, how could I ever be complete without you? Please forgive me.<br><br>" +
+          "If you have forgiven me, please press the button. I love you 💝.";
+      }
+    </script>
+  </body>
+</html>
